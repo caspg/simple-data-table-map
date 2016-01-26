@@ -1,4 +1,4 @@
-import { EDIT_ROW } from '../constants/ActionTypes';
+import { EDIT_ROW, DELETE_ROW } from '../constants/ActionTypes';
 import { combineReducers } from 'redux';
 import objectAssign from 'object-assign';
 
@@ -11,6 +11,11 @@ function regionData(state = [], action) {
         } else {
           return data;
         }
+      })
+
+    case DELETE_ROW:
+      return state.filter((data) => {
+        return data.regionName !== action.regionName;
       })
 
     default:

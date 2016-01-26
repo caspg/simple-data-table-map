@@ -18,7 +18,10 @@ export default class DataTableRow extends React.Component {
           />
         </td>
         <td>
-          <span className="glyphicon glyphicon-remove remove-btn"></span>
+          <span 
+            className="glyphicon glyphicon-remove remove-btn" 
+            onClick={this.props.onDeleteRow}
+          />
         </td>
       </tr>
     );

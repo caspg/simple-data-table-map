@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { editRow } from '../actions';
+import { editRow, deleteRow } from '../actions';
 
 import DataMap from '../components/DataMap';
 import DataTableBox from '../components/DataTableBox';
@@ -9,6 +9,10 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.handleEditRow = this.handleEditRow.bind(this);
+    this.handleDeleteRow = this.handleDeleteRow.bind(this);
+  }
+  handleDeleteRow(regionName, code){
+    this.props.dispatch(deleteRow(regionName, code));
   }
   handleEditRow(regionName, newValue){
     this.props.dispatch(editRow(regionName, newValue));
@@ -22,7 +26,8 @@ class App extends React.Component {
         <div className="container">
           <DataTableBox 
             regionData={this.props.regionData}
-            onEditRow={this.handleEditRow} 
+            onEditRow={this.handleEditRow}
+            onDeleteRow={this.handleDeleteRow}
           />
         </div>
       </div>

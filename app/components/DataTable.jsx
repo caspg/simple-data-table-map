@@ -10,6 +10,7 @@ export default class DataTable extends React.Component {
           regionName={data.regionName} 
           value={data.value} 
           onEditRow={this.props.onEditRow}
+          onDeleteRow={() => this.props.onDeleteRow(data.regionName, data.code)}
         />
       );
     });

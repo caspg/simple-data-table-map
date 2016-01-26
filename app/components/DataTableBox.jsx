@@ -9,6 +9,7 @@ export default class DataTableBox extends React.Component {
           <DataTable 
             regionData={this.props.regionData}
             onEditRow={this.props.onEditRow}
+            onDeleteRow={this.props.onDeleteRow}
           />
         </div>
       </div>
