@@ -38,3 +38,7 @@ export default class SelectBox extends React.Component {
     );
   }
 }
+
+SelectBox.propTypes = {
+  emptyRegions: React.PropTypes.array.isRequired
+}
