@@ -6,10 +6,8 @@ export default class DataTableBox extends React.Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col-md-4 col-md-offset-2">
-            <SelectBox emptyRegions={this.props.emptyRegions} />
-          </div>
+        <div className="row select-container">
+          <SelectBox emptyRegions={this.props.emptyRegions} />
         </div>
         <div className="row">
           <div className="col-md-10 col-md-offset-2">
