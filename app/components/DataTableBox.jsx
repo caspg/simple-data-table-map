@@ -5,10 +5,12 @@ export default class DataTableBox extends React.Component {
   render() {
     return (
       <div>
-        <DataTable 
-          regionData={this.props.regionData}
-          onEditRow={this.props.onEditRow}
-        />
+        <div className="col-md-10 col-md-offset-2">
+          <DataTable 
+            regionData={this.props.regionData}
+            onEditRow={this.props.onEditRow}
+          />
+        </div>
       </div>
     );
   }
