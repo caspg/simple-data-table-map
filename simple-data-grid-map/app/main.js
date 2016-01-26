@@ -1,9 +1,9 @@
 require("./app.scss");
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataMap from './components/DataMap.jsx';
+import App from './containers/App';
 
 ReactDOM.render(
-  <DataMap />,
+  <App />,
   document.getElementById('app')
 );
