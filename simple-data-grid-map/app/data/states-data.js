@@ -7,7 +7,7 @@ const statesData = [
   { 'name':'Colorado','alpha-2':'CO', 'value': '98' },
   { 'name':'Connecticut','alpha-2':'CT', 'value': '101' },
   { 'name':'Delaware','alpha-2':'DE', 'value': '109' },
-  { 'name':'District of Columbia','alpha-2':'DC', 'value': '115' },
+  // { 'name':'District of Columbia','alpha-2':'DC', 'value': '115' },
   { 'name':'Florida','alpha-2':'FL', 'value': '122' },
   { 'name':'Georgia','alpha-2':'GA', 'value': '91' },
   { 'name':'Hawaii','alpha-2':'HI', 'value': '131' },
