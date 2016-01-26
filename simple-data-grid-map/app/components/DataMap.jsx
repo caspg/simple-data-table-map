@@ -13,7 +13,7 @@ export default class DataMap extends React.Component {
   }
   render() {
     return (
-      <div id="container" style= {{ position: 'relative', width: '800px', height: '500px' }}></div>
+      <div id="datamap-container"></div>
     );
   }
 }
