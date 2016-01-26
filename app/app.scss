@@ -1,5 +1,20 @@
+$red: #B71C1C;
+
 #datamap-container {
   position: relative;
   width: 800px;
   height: 600px;
+}
+
+table {
+  .remove-btn {
+    padding: 10px;
+    color: $red;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  tr:hover .remove-btn {
+    opacity: 1;
+  }
 }

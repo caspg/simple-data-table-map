@@ -17,6 +17,9 @@ export default class DataTableRow extends React.Component {
             onEditRow={this.handleEditRow.bind(this)} 
           />
         </td>
+        <td>
+          <span className="glyphicon glyphicon-remove remove-btn"></span>
+        </td>
       </tr>
     );
   }
