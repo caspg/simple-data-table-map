@@ -23,8 +23,26 @@ function regionData(state = [], action) {
   }
 }
 
+function emptyRegions(state = [], action) {
+  console.log(state);
+  switch (action.type) {
+    case DELETE_ROW:
+      return [
+        {
+          regionName: action.regionName,
+          code: action.code
+        },
+        ...state
+      ]
+
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
-  regionData
+  regionData,
+  emptyRegions
 });
 
 export default rootReducer;

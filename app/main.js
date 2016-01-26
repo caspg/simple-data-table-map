@@ -7,7 +7,7 @@ import rootReducer from './reducers'
 import App from './containers/App';
 import statesData from './data/states-data';
 
-const store = createStore(rootReducer, { regionData: statesData });
+const store = createStore(rootReducer, { regionData: statesData, emptyRegions: [] });
 
 ReactDOM.render(
   <Provider store={store}>

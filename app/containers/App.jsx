@@ -37,7 +37,8 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    regionData: state.regionData
+    regionData: state.regionData,
+    emptyRegions: state.emptyRegions
   }
 }
 
