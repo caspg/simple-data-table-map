@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux'
+
 import DataMap from '../components/DataMap';
 import DataTableBox from '../components/DataTableBox';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -10,9 +12,17 @@ export default class App extends React.Component {
           <DataMap />
         </div>
         <div className="container">
-          <DataTableBox />
+          <DataTableBox regionData={this.props.regionData} />
         </div>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    regionData: state.regionData
+  }
+}
+
+export default connect(mapStateToProps)(App);
