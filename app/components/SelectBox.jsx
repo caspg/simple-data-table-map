@@ -6,17 +6,24 @@ export default class SelectBox extends React.Component {
   constructor(props){
     super(props);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
     this.state = {
       selected: false,
-      selectValue: null
+      selectedValue: null,
+      selectedOption: null
     };
   }
-  handleOnChange(value){
+  handleOnChange(value, option){
+    console.log(option);
     const selected = value ? true : false;
     this.setState({ 
-      selectValue: value,
+      selectedValue: value,
+      selectedOption: option[0],
       selected: selected 
     });
+  }
+  handleButtonClick(){
+    console.log(this.state.selectedOption.regionName);
   }
   render() {
     return (
@@ -24,7 +31,7 @@ export default class SelectBox extends React.Component {
         <div className="col-md-4 col-md-offset-2">
           <Select 
             name="empty-regions"
-            value={this.state.selectValue}
+            value={this.state.selectedValue}
             options={this.props.emptyRegions}
             labelKey="regionName"
             valueKey="code"
@@ -32,7 +39,7 @@ export default class SelectBox extends React.Component {
           />
         </div>
         <div className="col-md-2">
-          <button className="btn btn-default" disabled={!this.state.selected}>Add</button>
+          <button className="btn btn-default" disabled={!this.state.selected} onClick={this.handleButtonClick}>Add</button>
         </div>
       </div>
     );
