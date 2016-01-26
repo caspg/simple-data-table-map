@@ -17,8 +17,8 @@ export default class DataMap extends React.Component {
       return object;
     }, {});
   }
-  componentDidMount(){
-    new Datamap({
+  renderMap(){
+    return new Datamap({
       element: ReactDOM.findDOMNode(this),
       scope: 'usa',
       data: this.redducedData(),
@@ -33,8 +33,11 @@ export default class DataMap extends React.Component {
       }
     });
   }
+  componentDidMount(){
+    this.datamap = this.renderMap();
+  }
   componentDidUpdate(){
-    console.log('eloeloel');
+    this.datamap.updateChoropleth(this.redducedData());
   }
   render() {
     return (
