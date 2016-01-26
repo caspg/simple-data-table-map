@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="container">
-          <DataMap />
+          <DataMap regionData={this.props.regionData} />
         </div>
         <div className="container">
           <DataTableBox regionData={this.props.regionData} />
