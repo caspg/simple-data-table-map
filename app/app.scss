@@ -7,6 +7,9 @@ $red: #B71C1C;
 }
 
 table {
+  input {
+    border: none;
+  }
   .remove-btn {
     padding: 10px;
     color: $red;

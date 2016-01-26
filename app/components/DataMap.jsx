@@ -3,6 +3,8 @@ import topojson from 'topojson';
 import Datamap from 'datamaps/dist/datamaps.usa.min'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import statesDefaults from '../data/states-defaults';
+import objectAssign from 'object-assign';
 
 export default class DataMap extends React.Component {
   linearPalleteScale(value){
@@ -12,10 +14,11 @@ export default class DataMap extends React.Component {
     return d3.scale.linear().domain([minVal, maxVal]).range(["#EFEFFF","#02386F"])(value);
   }
   redducedData(){
-    return this.props.regionData.reduce((object, data) => {
+    const newData = this.props.regionData.reduce((object, data) => {
       object[data.code] = { value: data.value, fillColor: this.linearPalleteScale(data.value) };
       return object;
     }, {});
+    return objectAssign({}, statesDefaults, newData);
   }
   renderMap(){
     return new Datamap({
@@ -38,6 +41,9 @@ export default class DataMap extends React.Component {
   }
   componentDidUpdate(){
     this.datamap.updateChoropleth(this.redducedData());
+  }
+  componentWillUnmount(){
+    d3.select('svg').remove();
   }
   render() {
     return (
