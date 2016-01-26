@@ -1,15 +1,14 @@
 import React from 'react';
 import DataTable from './DataTable';
-import Select from 'react-select';
-import 'react-select/dist/react-select.min.css';
+import SelectBox from './SelectBox';
 
 export default class DataTableBox extends React.Component {
   render() {
     return (
       <div>
-        <div className="row select-container">
+        <div className="row">
           <div className="col-md-4 col-md-offset-2">
-            <Select />
+            <SelectBox emptyRegions={this.props.emptyRegions} />
           </div>
         </div>
         <div className="row">

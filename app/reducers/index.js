@@ -24,7 +24,6 @@ function regionData(state = [], action) {
 }
 
 function emptyRegions(state = [], action) {
-  console.log(state);
   switch (action.type) {
     case DELETE_ROW:
       return [

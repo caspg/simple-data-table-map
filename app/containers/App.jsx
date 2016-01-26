@@ -26,6 +26,7 @@ class App extends React.Component {
         <div className="container">
           <DataTableBox 
             regionData={this.props.regionData}
+            emptyRegions={this.props.emptyRegions}
             onEditRow={this.handleEditRow}
             onDeleteRow={this.handleDeleteRow}
           />
