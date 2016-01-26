@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './components/Hello.jsx';
+import DataMap from './components/DataMap.jsx';
 
 ReactDOM.render(
-  <Hello />,
+  <DataMap />,
   document.getElementById('app')
 );

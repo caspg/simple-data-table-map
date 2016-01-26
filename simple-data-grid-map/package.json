@@ -13,6 +13,9 @@
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "d3": "^3.5.13",
+    "datamaps": "^0.4.2",
+    "topojson": "^1.6.20",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
   },
