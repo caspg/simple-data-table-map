@@ -33,9 +33,16 @@ export default class DataMap extends React.Component {
       }
     });
   }
+  componentDidUpdate(){
+    console.log('eloeloel');
+  }
   render() {
     return (
       <div id="datamap-container"></div>
     );
   }
 }
+
+DataMap.propTypes = {
+    regionData: React.PropTypes.array.isRequired
+};

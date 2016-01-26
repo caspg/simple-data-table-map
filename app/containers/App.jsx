@@ -1,10 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { editRow } from '../actions';
 
 import DataMap from '../components/DataMap';
 import DataTableBox from '../components/DataTableBox';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleEditRow = this.handleEditRow.bind(this);
+  }
+  handleEditRow(regionName, newValue){
+    this.props.dispatch(editRow(regionName, newValue));
+  }
   render() {
     return (
       <div>
@@ -12,7 +20,10 @@ class App extends React.Component {
           <DataMap regionData={this.props.regionData} />
         </div>
         <div className="container">
-          <DataTableBox regionData={this.props.regionData} />
+          <DataTableBox 
+            regionData={this.props.regionData}
+            onEditRow={this.handleEditRow} 
+          />
         </div>
       </div>
     );

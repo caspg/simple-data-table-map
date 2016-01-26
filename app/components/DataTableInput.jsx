@@ -16,6 +16,7 @@ export default class DataTableInput extends React.Component {
   handleOnBlur(event){
     const newValue = parseFloat(event.target.value) || 0;
     this.setState({ value: newValue });
+    this.props.onEditRow(newValue);
     console.log('handleOnBlur: setState() should be called only when value is changed!');
   }
   render() {
@@ -31,5 +32,6 @@ export default class DataTableInput extends React.Component {
 }
 
 DataTableInput.propTypes = {
-  value: React.PropTypes.number.isRequired
+  value: React.PropTypes.number.isRequired,
+  onEditRow: React.PropTypes.func.isRequired
 }

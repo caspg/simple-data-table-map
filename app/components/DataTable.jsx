@@ -3,8 +3,15 @@ import DataTableRow from './DataTableRow';
 
 export default class DataTable extends React.Component {
   renderTableRows(){
-    return this.props.regionData.map(function(data, index) {
-      return <DataTableRow key={index} regionName={data.regionName} value={data.value} />
+    return this.props.regionData.map((data, index) => {
+      return (
+        <DataTableRow 
+          key={index} 
+          regionName={data.regionName} 
+          value={data.value} 
+          onEditRow={this.props.onEditRow}
+        />
+      );
     });
   }
   render() {
@@ -22,4 +29,9 @@ export default class DataTable extends React.Component {
       </table>
     );
   }
+}
+
+DataTable.propTypes = {
+  regionData: React.PropTypes.array.isRequired,
+  onEditRow: React.PropTypes.func.isRequired
 }
