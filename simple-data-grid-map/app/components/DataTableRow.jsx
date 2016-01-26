@@ -6,7 +6,7 @@ export default class DataTableRow extends React.Component {
     return (
       <tr>
         <td>
-          {this.props.name}
+          {this.props.regionName}
         </td>
         <td>
           <DataTableInput value={this.props.value} />
