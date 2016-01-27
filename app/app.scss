@@ -9,10 +9,21 @@ $borderStyle: 1px solid #ddd;
 }
 
 table {
+  margin-bottom: 50px;
+
   th {
     border: $borderStyle;
     padding: 5px 15px;
     font-weight: bold;
+    cursor: pointer;
+
+    h4 {
+      display: inline-block;
+    }
+
+    .glyphicon {
+      margin-left: 20px;
+    }
   }
 
   td {

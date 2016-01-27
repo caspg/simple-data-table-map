@@ -20,8 +20,11 @@ export default class DataTable extends React.Component {
       <table>
         <thead>
           <tr>
-            <th><h4>State Name</h4></th>
-            <th><h4>Value</h4></th>
+            <th>
+              <h4>STATE NAME</h4>
+              <span className="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </th>
+            <th><h4>VALUE</h4></th>
           </tr>
         </thead>
         <tbody>
