@@ -1,4 +1,4 @@
-import { EDIT_ROW, DELETE_ROW } from '../constants/ActionTypes';
+import { EDIT_ROW, DELETE_ROW, ADD_ROW } from '../constants/ActionTypes';
 import { combineReducers } from 'redux';
 import objectAssign from 'object-assign';
 
@@ -18,6 +18,16 @@ function regionData(state = [], action) {
         return data.regionName !== action.regionName;
       })
 
+    case ADD_ROW:
+      return [
+        {
+          regionName: action.regionName,
+          code: action.code,
+          value: action.value
+        },
+        ...state
+      ]
+
     default:
       return state;
   }
@@ -33,6 +43,11 @@ function emptyRegions(state = [], action) {
         },
         ...state
       ]
+
+    case ADD_ROW:
+      return state.filter((data) => {
+        return data.regionName !== action.regionName;
+      })
 
     default:
       return state;

@@ -17,7 +17,6 @@ export default class SelectBox extends React.Component {
     };
   }
   handleOnChange(value, option){
-    console.log(option);
     const selected = value ? true : false;
     this.setState({
       selectedValue: value,
@@ -26,8 +25,17 @@ export default class SelectBox extends React.Component {
     });
   }
   handleButtonClick(){
-    console.log(this.state.selectedOption.regionName);
-    console.log(this.state.inputValue);
+    this.props.onAddRow(
+      this.state.selectedOption.regionName,
+      this.state.selectedOption.code,
+      this.state.inputValue
+    );
+    this.setState({
+      selected: false,
+      selectedValue: null,
+      selectedOption: null,
+      inputValue: null
+    });
   }
   handleInputBlur(newValue){
     this.setState({ inputValue: newValue });
@@ -63,5 +71,6 @@ export default class SelectBox extends React.Component {
 }
 
 SelectBox.propTypes = {
-  emptyRegions: React.PropTypes.array.isRequired
+  emptyRegions: React.PropTypes.array.isRequired,
+  onAddRow: React.PropTypes.func.isRequired
 }
