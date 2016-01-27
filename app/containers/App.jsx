@@ -46,10 +46,18 @@ App.propTypes = {
   emptyRegions: React.PropTypes.array.isRequired
 };
 
+function alphabeticOrder(collection) {
+  return collection.sort(function(a, b) {
+    if (a.regionName > b.regionName) return 1;
+    if (a.regionName < b.regionName) return -1;
+    return 0;
+  });
+}
+
 function mapStateToProps(state) {
   return {
-    regionData: state.regionData,
-    emptyRegions: state.emptyRegions
+    regionData: alphabeticOrder(state.regionData),
+    emptyRegions: alphabeticOrder(state.emptyRegions)
   }
 }
 
