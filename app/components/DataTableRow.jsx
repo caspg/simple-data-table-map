@@ -30,5 +30,6 @@ export default class DataTableRow extends React.Component {
 
 DataTableRow.propTypes = {
   value: React.PropTypes.number.isRequired,
-  regionName: React.PropTypes.string.isRequired
+  regionName: React.PropTypes.string.isRequired,
+  onDeleteRow: React.PropTypes.func.isRequired
 }

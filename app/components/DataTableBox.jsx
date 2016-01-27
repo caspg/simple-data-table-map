@@ -28,7 +28,9 @@ export default class DataTableBox extends React.Component {
   }
 }
 
-DataTable.propTypes = {
+DataTableBox.propTypes = {
   regionData: React.PropTypes.array.isRequired,
+  emptyRegions: React.PropTypes.array.isRequired,
   onEditRow: React.PropTypes.func.isRequired,
+  onDeleteRow: React.PropTypes.func.isRequired,
 }
