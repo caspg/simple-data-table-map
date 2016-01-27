@@ -1,16 +1,19 @@
 import React from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.min.css';
+import NumericInput from './NumericInput';
 
 export default class SelectBox extends React.Component {
   constructor(props){
     super(props);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleInputBlur = this.handleInputBlur.bind(this);
     this.state = {
       selected: false,
       selectedValue: null,
-      selectedOption: null
+      selectedOption: null,
+      inputValue: null
     };
   }
   handleOnChange(value, option){
@@ -24,6 +27,10 @@ export default class SelectBox extends React.Component {
   }
   handleButtonClick(){
     console.log(this.state.selectedOption.regionName);
+    console.log(this.state.inputValue);
+  }
+  handleInputBlur(newValue){
+    this.setState({ inputValue: newValue });
   }
   render() {
     return (
@@ -36,6 +43,13 @@ export default class SelectBox extends React.Component {
             labelKey="regionName"
             valueKey="code"
             onChange={this.handleOnChange}
+          />
+        </div>
+        <div className="col-md-2">
+          <NumericInput
+            className="form-control"
+            value={this.state.inputValue}
+            onBlur={this.handleInputBlur}
           />
         </div>
         <div className="col-md-2">
