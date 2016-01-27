@@ -3,7 +3,7 @@ import React from 'react';
 export default class NumericInput extends React.Component {
   constructor(props){
     super(props);
-    this.state = { value: this.props.value };
+    this.state = { value: this.props.value || '' };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
   }
