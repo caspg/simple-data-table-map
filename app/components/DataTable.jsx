@@ -20,8 +20,8 @@ export default class DataTable extends React.Component {
       <table>
         <thead>
           <tr>
-            <th>State Name</th>
-            <th>Value</th>
+            <th><h4>State Name</h4></th>
+            <th><h4>Value</h4></th>
           </tr>
         </thead>
         <tbody>

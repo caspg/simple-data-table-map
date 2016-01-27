@@ -13,7 +13,7 @@ export default class DataTableBox extends React.Component {
           />
         </div>
         <div className="row">
-          <div className="col-md-10 col-md-offset-2">
+          <div className="col-md-8 col-md-offset-2">
             <DataTable
               regionData={this.props.regionData}
               onEditRow={this.props.onEditRow}

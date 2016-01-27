@@ -1,5 +1,7 @@
 $red: #B71C1C;
 
+$borderStyle: 1px solid #ddd;
+
 #datamap-container {
   position: relative;
   width: 800px;
@@ -7,8 +9,26 @@ $red: #B71C1C;
 }
 
 table {
+  th {
+    border: $borderStyle;
+    padding: 5px 15px;
+    font-weight: bold;
+  }
+
+  td {
+    border: $borderStyle;
+    width: 44%;
+    padding: 5px 15px;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+
   input {
     border: none;
+    width: 100%;
+    height: 100%;
   }
   .remove-btn {
     padding: 10px;
