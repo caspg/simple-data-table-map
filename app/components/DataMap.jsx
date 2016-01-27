@@ -7,6 +7,10 @@ import statesDefaults from '../data/states-defaults';
 import objectAssign from 'object-assign';
 
 export default class DataMap extends React.Component {
+  constructor(props){
+    super(props);
+    this.datamap = null;
+  }
   linearPalleteScale(value){
     const dataValues = this.props.regionData.map(function(data) { return data.value });
     const minVal = Math.min(...dataValues);

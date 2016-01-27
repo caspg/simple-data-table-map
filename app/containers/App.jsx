@@ -36,6 +36,11 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  regionData: React.PropTypes.array.isRequired,
+  emptyRegions: React.PropTypes.array.isRequired
+};
+
 function mapStateToProps(state) {
   return {
     regionData: state.regionData,

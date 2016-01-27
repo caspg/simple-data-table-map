@@ -16,10 +16,10 @@ export default class SelectBox extends React.Component {
   handleOnChange(value, option){
     console.log(option);
     const selected = value ? true : false;
-    this.setState({ 
+    this.setState({
       selectedValue: value,
       selectedOption: option[0],
-      selected: selected 
+      selected: selected
     });
   }
   handleButtonClick(){
@@ -29,7 +29,7 @@ export default class SelectBox extends React.Component {
     return (
       <div>
         <div className="col-md-4 col-md-offset-2">
-          <Select 
+          <Select
             name="empty-regions"
             value={this.state.selectedValue}
             options={this.props.emptyRegions}
@@ -39,7 +39,9 @@ export default class SelectBox extends React.Component {
           />
         </div>
         <div className="col-md-2">
-          <button className="btn btn-default" disabled={!this.state.selected} onClick={this.handleButtonClick}>Add</button>
+          <button className="btn btn-default" disabled={!this.state.selected} onClick={this.handleButtonClick}>
+            Add
+          </button>
         </div>
       </div>
     );

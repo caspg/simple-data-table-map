@@ -1,8 +1,8 @@
 import React from 'react';
-import DataTableInput from './DataTableInput';
+import NumericInput from './NumericInput';
 
 export default class DataTableRow extends React.Component {
-  handleEditRow(newValue){
+  handleInputBlur(newValue){
     this.props.onEditRow(this.props.regionName, newValue);
   }
   render() {
@@ -12,14 +12,14 @@ export default class DataTableRow extends React.Component {
           {this.props.regionName}
         </td>
         <td>
-          <DataTableInput 
+          <NumericInput
             value={this.props.value}
-            onEditRow={this.handleEditRow.bind(this)} 
+            onBlur={this.handleInputBlur.bind(this)}
           />
         </td>
         <td>
-          <span 
-            className="glyphicon glyphicon-remove remove-btn" 
+          <span
+            className="glyphicon glyphicon-remove remove-btn"
             onClick={this.props.onDeleteRow}
           />
         </td>
