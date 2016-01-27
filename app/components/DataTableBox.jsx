@@ -7,13 +7,15 @@ export default class DataTableBox extends React.Component {
     return (
       <div>
         <div className="row select-container">
-          <SelectBox
-            emptyRegions={this.props.emptyRegions}
-            onAddRow={this.props.onAddRow}
-          />
+          <div className="col-md-12">
+            <SelectBox
+              emptyRegions={this.props.emptyRegions}
+              onAddRow={this.props.onAddRow}
+            />
+          </div>
         </div>
-        <div className="row">
-          <div className="col-md-8 col-md-offset-2">
+        <div className="row center">
+          <div className="col-md-12">
             <DataTable
               regionData={this.props.regionData}
               onEditRow={this.props.onEditRow}

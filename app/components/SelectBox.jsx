@@ -43,7 +43,7 @@ export default class SelectBox extends React.Component {
   render() {
     return (
       <div>
-        <div className="col-md-3 col-md-offset-2">
+        <div className="col-md-6">
           <Select
             name="empty-regions"
             value={this.state.selectedValue}
@@ -53,7 +53,7 @@ export default class SelectBox extends React.Component {
             onChange={this.handleOnChange}
           />
         </div>
-        <div className="col-md-2">
+        <div className="col-md-4">
           <NumericInput
             className="form-control"
             value={this.state.inputValue}
