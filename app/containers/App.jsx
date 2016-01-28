@@ -22,8 +22,8 @@ class App extends React.Component {
   handleAddRow(regionName, code, value){
     this.props.dispatch(addRow(regionName, code, value));
   }
-  handleToggleDirection(sortKey, currentDirection){
-    this.props.dispatch(toggleDirection(sortKey, currentDirection));
+  handleToggleDirection(newSortKey){
+    this.props.dispatch(toggleDirection(newSortKey));
   }
   render() {
     return (

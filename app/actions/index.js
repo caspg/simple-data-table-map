@@ -13,6 +13,6 @@ export function addRow(regionName, code, value) {
 }
 
 
-export function toggleDirection(sortKey, currentDirection) {
-  return { type: TOGGLE_DIRECTION, sortKey, currentDirection };
+export function toggleDirection(newSortKey) {
+  return { type: TOGGLE_DIRECTION, newSortKey };
 }

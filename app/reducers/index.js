@@ -54,12 +54,18 @@ function emptyRegions(state = [], action) {
   }
 }
 
+
+function newSortDirection(state, action) {
+  if (state.key !== action.newSortKey) return state.direction;
+  return state.direction === 'ASC' ? 'DESC' : 'ASC';
+}
+
 function sortState(state = {}, action) {
   switch (action.type) {
     case TOGGLE_DIRECTION:
       return {
-        key: action.sortKey,
-        direction: action.currentDirection === 'ASC' ? 'DESC' : 'ASC'
+        key: action.newSortKey,
+        direction: newSortDirection(state, action)
       };
 
     default:
