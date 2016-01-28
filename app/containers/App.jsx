@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { editRow, deleteRow, addRow } from '../actions';
+import { editRow, deleteRow, addRow, toggleDirection } from '../actions';
 
 import DataMap from '../components/DataMap';
 import DataTableBox from '../components/DataTableBox';
@@ -11,6 +11,7 @@ class App extends React.Component {
     this.handleEditRow = this.handleEditRow.bind(this);
     this.handleDeleteRow = this.handleDeleteRow.bind(this);
     this.handleAddRow = this.handleAddRow.bind(this);
+    this.handleToggleDirection = this.handleToggleDirection.bind(this);
   }
   handleDeleteRow(regionName, code){
     this.props.dispatch(deleteRow(regionName, code));
@@ -20,6 +21,9 @@ class App extends React.Component {
   }
   handleAddRow(regionName, code, value){
     this.props.dispatch(addRow(regionName, code, value));
+  }
+  handleToggleDirection(sortKey, currentDirection){
+    this.props.dispatch(toggleDirection(sortKey, currentDirection));
   }
   render() {
     return (
@@ -31,9 +35,11 @@ class App extends React.Component {
           <DataTableBox
             regionData={this.props.regionData}
             emptyRegions={this.props.emptyRegions}
+            sortState={this.props.sortState}
             onEditRow={this.handleEditRow}
             onDeleteRow={this.handleDeleteRow}
             onAddRow={this.handleAddRow}
+            toggleDirection={this.handleToggleDirection}
           />
         </div>
       </div>
@@ -43,21 +49,36 @@ class App extends React.Component {
 
 App.propTypes = {
   regionData: React.PropTypes.array.isRequired,
-  emptyRegions: React.PropTypes.array.isRequired
+  emptyRegions: React.PropTypes.array.isRequired,
+  sortState: React.PropTypes.object.isRequired
 };
 
-function alphabeticOrder(collection) {
-  return collection.sort(function(a, b) {
-    if (a.regionName > b.regionName) return 1;
-    if (a.regionName < b.regionName) return -1;
-    return 0;
-  });
+function sortCollection(collection, sortState) {
+  switch (sortState.direction) {
+    case 'ASC':
+      return collection.sort(function(a, b) {
+        if (a[sortState.key] > b[sortState.key]) return 1;
+        if (a[sortState.key] < b[sortState.key]) return -1;
+        return 0;
+      });
+
+    case 'DESC':
+      return collection.sort(function(a, b) {
+        if (a[sortState.key] > b[sortState.key]) return -1;
+        if (a[sortState.key] < b[sortState.key]) return 1;
+        return 0;
+      });
+
+    default:
+      return collection;
+  }
 }
 
 function mapStateToProps(state) {
   return {
-    regionData: alphabeticOrder(state.regionData),
-    emptyRegions: alphabeticOrder(state.emptyRegions)
+    regionData: sortCollection(state.regionData, state.sortState),
+    emptyRegions: sortCollection(state.emptyRegions, state.sortState),
+    sortState: state.sortState
   }
 }
 

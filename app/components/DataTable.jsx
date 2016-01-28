@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTableRow from './DataTableRow';
+import SortableHeader from './SortableHeader';
 
 export default class DataTable extends React.Component {
   renderTableRows(){
@@ -20,10 +21,12 @@ export default class DataTable extends React.Component {
       <table>
         <thead>
           <tr>
-            <th>
-              <h4>STATE NAME</h4>
-              <span className="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-            </th>
+            <SortableHeader
+              label="STATE NAME"
+              sortState={this.props.sortState}
+              sortKey="regionName"
+              toggleDirection={this.props.toggleDirection}
+            />
             <th><h4>VALUE</h4></th>
           </tr>
         </thead>
@@ -38,5 +41,6 @@ export default class DataTable extends React.Component {
 DataTable.propTypes = {
   regionData: React.PropTypes.array.isRequired,
   onEditRow: React.PropTypes.func.isRequired,
-  onDeleteRow: React.PropTypes.func.isRequired
+  onDeleteRow: React.PropTypes.func.isRequired,
+  toggleDirection: React.PropTypes.func.isRequired
 }

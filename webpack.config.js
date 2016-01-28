@@ -1,6 +1,6 @@
 module.exports = {
   entry: './app/main.js',
-  output: { path: '/', filename: 'bundle.js' },
+  output: { path: './', filename: 'bundle.js' },
   module: {
     loaders: [
       {
@@ -18,6 +18,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'] 
+    extensions: ['', '.js', '.jsx']
   }
 };

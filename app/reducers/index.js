@@ -1,4 +1,4 @@
-import { EDIT_ROW, DELETE_ROW, ADD_ROW } from '../constants/ActionTypes';
+import { EDIT_ROW, DELETE_ROW, ADD_ROW, TOGGLE_DIRECTION } from '../constants/ActionTypes';
 import { combineReducers } from 'redux';
 import objectAssign from 'object-assign';
 
@@ -54,9 +54,23 @@ function emptyRegions(state = [], action) {
   }
 }
 
+function sortState(state = {}, action) {
+  switch (action.type) {
+    case TOGGLE_DIRECTION:
+      return {
+        key: action.sortKey,
+        direction: action.currentDirection === 'ASC' ? 'DESC' : 'ASC'
+      };
+
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   regionData,
-  emptyRegions
+  emptyRegions,
+  sortState
 });
 
 export default rootReducer;

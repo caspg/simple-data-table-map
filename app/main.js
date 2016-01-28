@@ -7,10 +7,13 @@ import rootReducer from './reducers'
 import App from './containers/App';
 import statesData from './data/states-data';
 
-const store = createStore(
-  rootReducer,
-  { regionData: statesData, emptyRegions: [] }
-);
+const initialState = {
+  regionData: statesData,
+  emptyRegions: [],
+  sortState: { key: 'regionName', direction: 'ASC' }
+};
+
+const store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>

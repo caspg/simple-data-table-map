@@ -18,8 +18,10 @@ export default class DataTableBox extends React.Component {
           <div className="col-md-12">
             <DataTable
               regionData={this.props.regionData}
+              sortState={this.props.sortState}
               onEditRow={this.props.onEditRow}
               onDeleteRow={this.props.onDeleteRow}
+              toggleDirection={this.props.toggleDirection}
             />
           </div>
         </div>
@@ -33,4 +35,5 @@ DataTableBox.propTypes = {
   emptyRegions: React.PropTypes.array.isRequired,
   onEditRow: React.PropTypes.func.isRequired,
   onDeleteRow: React.PropTypes.func.isRequired,
+  toggleDirection: React.PropTypes.func.isRequired
 }
