@@ -27,7 +27,12 @@ export default class DataTable extends React.Component {
               sortKey="regionName"
               toggleDirection={this.props.toggleDirection}
             />
-            <th><h4>VALUE</h4></th>
+            <SortableHeader
+              label="VALUE"
+              sortState={this.props.sortState}
+              sortKey="value"
+              toggleDirection={this.props.toggleDirection}
+            />
           </tr>
         </thead>
         <tbody>

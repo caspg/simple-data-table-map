@@ -9,7 +9,8 @@ export default class SortableHeader extends React.Component {
     return <span className={glyphClass} aria-hidden="true"></span>
   }
   handleOnClick(){
-    const { key, direction } = this.props.sortState;
+    const direction = this.props.sortState.direction;
+    const key = this.props.sortKey;
     this.props.toggleDirection(key, direction);
   }
   render() {

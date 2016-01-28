@@ -74,10 +74,18 @@ function sortCollection(collection, sortState) {
   }
 }
 
+function alphabeticOrder(collection) {
+  return collection.sort(function(a, b) {
+    if (a.regionName > b.regionName) return 1;
+    if (a.regionName < b.regionName) return -1;
+    return 0;
+  });
+}
+
 function mapStateToProps(state) {
   return {
     regionData: sortCollection(state.regionData, state.sortState),
-    emptyRegions: sortCollection(state.emptyRegions, state.sortState),
+    emptyRegions: alphabeticOrder(state.emptyRegions),
     sortState: state.sortState
   }
 }
