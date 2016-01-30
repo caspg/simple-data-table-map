@@ -2,10 +2,8 @@ $red: #B71C1C;
 
 $borderStyle: 1px solid #ddd;
 
-#datamap-container {
-  position: relative;
-  width: 800px;
-  height: 600px;
+body {
+  margin-top: 70px;
 }
 
 table {
@@ -60,7 +58,7 @@ table {
 }
 
 .select-container {
-  margin-bottom: 50px;
+  margin: 100px 0;
 }
 
 .navbar {

@@ -40,8 +40,42 @@ export default class DataMap extends React.Component {
       }
     });
   }
+  currentScreenWidth(){
+    return window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+  }
   componentDidMount(){
+    const mapContainer = d3.select('#datamap-container');
+    const initialScreenWidth = this.currentScreenWidth();
+    const containerWidth = (initialScreenWidth < 600) ?
+      { width: initialScreenWidth + 'px',  height: (initialScreenWidth * 0.5625) + 'px' } :
+      { width: '600px', height: '350px' }
+
+    mapContainer.style(containerWidth);
     this.datamap = this.renderMap();
+    window.addEventListener('resize', () => {
+      const currentScreenWidth = this.currentScreenWidth();
+      const mapContainerWidth = mapContainer.style('width');
+      if (this.currentScreenWidth() > 600 && mapContainerWidth !== '600px') {
+        console.log('first cond')
+        d3.select('svg').remove();
+        mapContainer.style({
+          width: '600px',
+          height: '350px'
+        });
+        this.datamap = this.renderMap();
+      }
+      else if (this.currentScreenWidth() <= 600) {
+        console.log('second cond')
+        d3.select('svg').remove();
+        mapContainer.style({
+          width: currentScreenWidth + 'px',
+          height: (currentScreenWidth * 0.5625) + 'px'
+        });
+        this.datamap = this.renderMap();
+      }
+    });
   }
   componentDidUpdate(){
     this.datamap.updateChoropleth(this.redducedData());
@@ -51,7 +85,7 @@ export default class DataMap extends React.Component {
   }
   render() {
     return (
-      <div id="datamap-container"></div>
+      <div id="datamap-container" style={{ position: "relative" }}></div>
     );
   }
 }
