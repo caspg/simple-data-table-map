@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="container">
+        <div className="container-fluid datamap-outer-conainer">
           <DataMap regionData={this.props.regionData} />
         </div>
         <div className="container">

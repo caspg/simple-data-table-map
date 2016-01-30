@@ -6,6 +6,15 @@ body {
   margin-top: 70px;
 }
 
+.datamap-outer-conainer {
+  padding: 0;
+
+  #datamap-container {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+
 table {
   margin-bottom: 150px;
 
