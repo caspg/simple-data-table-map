@@ -30,6 +30,8 @@ export default class DataMap extends React.Component {
       scope: 'usa',
       data: this.redducedData(),
       geographyConfig: {
+        borderWidth: 0.5,
+        highlightFillColor: '#FFCC80',
         popupTemplate: function(geography, data) {
           if (data && data.value) {
             return '<div class="hoverinfo"><strong>' + geography.properties.name + ', ' + data.value + '</strong></div>';
