@@ -6,16 +6,16 @@ export default class DataTableBox extends React.Component {
   render() {
     return (
       <div>
-        <div className="row select-container">
-          <div className="col-md-12">
+        <div className="row center-xs">
+          <div className="col-xs-10">
             <SelectBox
               emptyRegions={this.props.emptyRegions}
               onAddRow={this.props.onAddRow}
             />
           </div>
         </div>
-        <div className="row center">
-          <div className="col-md-12">
+        <div className="row center-xs">
+          <div className="col-xs-10">
             <DataTable
               regionData={this.props.regionData}
               sortState={this.props.sortState}

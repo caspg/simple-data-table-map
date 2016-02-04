@@ -42,31 +42,36 @@ export default class SelectBox extends React.Component {
   }
   render() {
     return (
-      <div className="row middle-xs">
-        <div className="col-sm-6">
-          <Select
-            name="empty-regions"
-            value={this.state.selectedValue}
-            options={this.props.emptyRegions}
-            labelKey="regionName"
-            valueKey="code"
-            onChange={this.handleOnChange}
-          />
-        </div>
-        <div className="col-sm-4">
-          <NumericInput
-            className="form-control"
-            value={this.state.inputValue}
-            onBlur={this.handleInputBlur}
-          />
-        </div>
-        <div className="col-sm-2">
-          <button className="btn btn-default add-button"
-            disabled={!this.state.selected}
-            onClick={this.handleButtonClick}>
-            <span className="glyphicon glyphicon-plus"></span>
-          </button>
-        </div>
+      <div className="select-container">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <Select
+                  name="empty-regions"
+                  value={this.state.selectedValue}
+                  options={this.props.emptyRegions}
+                  labelKey="regionName"
+                  valueKey="code"
+                  onChange={this.handleOnChange}
+                />
+              </td>
+              <td>
+                <NumericInput
+                  value={this.state.inputValue}
+                  onBlur={this.handleInputBlur}
+                />
+              </td>
+              <td>
+                <button className="btn add-button"
+                  disabled={!this.state.selected}
+                  onClick={this.handleButtonClick}>
+                  <span className="glyphicon glyphicon-plus"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -25,7 +25,9 @@ body {
 }
 
 table {
+  width: 100%;
   margin-bottom: 150px;
+  border-collapse: collapse;
 
   th {
     border: $borderStyle;
@@ -44,7 +46,7 @@ table {
 
   td {
     border: $borderStyle;
-    width: 50%;
+    width: 45%;
     height: 35px;
 
     &:first-of-type {
@@ -53,6 +55,7 @@ table {
 
     &:last-of-type {
       border: none;
+      width: 10%;
     }
   }
 
@@ -77,21 +80,31 @@ table {
 
 .select-container {
   margin: 20px 0;
-  height: 35px;
+
+  table {
+    margin: 0;
+
+    td {
+      padding: 0;
+
+      &:first-of-type {
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
 
   .Select-control {
     border-radius: 0;
-  }
-
-  .form-control {
-    height: 35px;
-    border-radius: 0;
+    border: 0;
+    border-left: 1px solid #ddd;
   }
 
   .add-button {
     padding: 5px;
     color: $green;
     border: none;
+    background: none;
 
     &:disabled {
       color: lighten($green, 25%);
