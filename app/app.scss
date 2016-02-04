@@ -1,10 +1,19 @@
 $red: #B71C1C;
+$green: #4CAF50;
 
 $borderStyle: 1px solid #ddd;
 
 body {
   margin-top: 70px;
 }
+
+.navbar {
+  border-radius: 0;
+  height: 60px;
+  background: rgba(239, 239, 255, 0.9);
+  color: white !important;
+}
+
 
 .datamap-outer-conainer {
   padding: 0;
@@ -67,12 +76,29 @@ table {
 }
 
 .select-container {
-  margin: 100px 0;
-}
+  margin: 20px 0;
+  height: 35px;
 
-.navbar {
-  border-radius: 0;
-  height: 60px;
-  background: rgba(239, 239, 255, 0.9);
-  color: white !important;
+  .Select-control {
+    border-radius: 0;
+  }
+
+  .form-control {
+    height: 35px;
+    border-radius: 0;
+  }
+
+  .add-button {
+    padding: 5px;
+    color: $green;
+    border: none;
+
+    &:disabled {
+      color: lighten($green, 25%);
+    }
+
+    .glyphicon {
+      font-size: 16px;
+    }
+  }
 }

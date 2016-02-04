@@ -42,8 +42,8 @@ export default class SelectBox extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div className="col-md-6">
+      <div className="row middle-xs">
+        <div className="col-sm-6">
           <Select
             name="empty-regions"
             value={this.state.selectedValue}
@@ -53,16 +53,18 @@ export default class SelectBox extends React.Component {
             onChange={this.handleOnChange}
           />
         </div>
-        <div className="col-md-4">
+        <div className="col-sm-4">
           <NumericInput
             className="form-control"
             value={this.state.inputValue}
             onBlur={this.handleInputBlur}
           />
         </div>
-        <div className="col-md-2">
-          <button className="btn btn-default" disabled={!this.state.selected} onClick={this.handleButtonClick}>
-            Add
+        <div className="col-sm-2">
+          <button className="btn btn-default add-button"
+            disabled={!this.state.selected}
+            onClick={this.handleButtonClick}>
+            <span className="glyphicon glyphicon-plus"></span>
           </button>
         </div>
       </div>
