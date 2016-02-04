@@ -86,9 +86,9 @@ table {
 
     td {
       padding: 0;
+      border-left: none;
 
       &:first-of-type {
-        border-left: none;
         border-right: none;
       }
     }
@@ -96,8 +96,10 @@ table {
 
   .Select-control {
     border-radius: 0;
+    border-collapse: separate;
     border: 0;
     border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
   }
 
   .add-button {
