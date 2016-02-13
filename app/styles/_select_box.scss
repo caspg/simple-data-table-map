@@ -1,0 +1,67 @@
+.select-box-container {
+  display: flex;
+  margin-bottom: 20px;
+
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: start;
+
+  .column {
+    display: inline-block;
+    width: 45%;
+    height: 36px;
+
+    &:last-of-type {
+      width: 10%;
+    }
+  }
+
+  .numeric-input-column {
+    input {
+      padding-left: 15px;
+      width: 100%;
+      height: 100%;
+      border: $borderStyle;
+
+      &:focus {
+        outline: none;
+        border-color: $outline-blue lighten($outline-blue, 5%) lighten($outline-blue, 5%);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px -1px opacify($outline-blue, 0.5);
+      }
+    }
+  }
+
+  .Select-control {
+    border: $borderStyle;
+    border-radius: 0;
+    border-right: none;
+
+    .Select-menu-outer {
+      border-color: red;
+    }
+  }
+
+  .button-column {
+    button {
+      height: 100%;
+    }
+  }
+
+  .add-button {
+    margin-left: 10px;
+    padding: 10px;
+    color: $green;
+    border: none;
+    background: none;
+
+    &:disabled {
+      color: lighten($green, 25%);
+    }
+
+    .glyphicon {
+      font-size: 1.7rem;
+    }
+  }
+}

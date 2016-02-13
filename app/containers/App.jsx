@@ -30,20 +30,18 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="container-fluid datamap-outer-conainer">
+        <div className="datamap-outer-conainer">
           <DataMap regionData={this.props.regionData} />
         </div>
-        <div className="container">
-          <DataTableBox
-            regionData={this.props.regionData}
-            emptyRegions={this.props.emptyRegions}
-            sortState={this.props.sortState}
-            onEditRow={this.handleEditRow}
-            onDeleteRow={this.handleDeleteRow}
-            onAddRow={this.handleAddRow}
-            toggleDirection={this.handleToggleDirection}
-          />
-        </div>
+        <DataTableBox
+          regionData={this.props.regionData}
+          emptyRegions={this.props.emptyRegions}
+          sortState={this.props.sortState}
+          onEditRow={this.handleEditRow}
+          onDeleteRow={this.handleDeleteRow}
+          onAddRow={this.handleAddRow}
+          toggleDirection={this.handleToggleDirection}
+        />
       </div>
     );
   }

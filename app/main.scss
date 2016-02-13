@@ -1,7 +1,10 @@
 $red: #B71C1C;
 $green: #4CAF50;
+$outline-blue: #08c;
 
 $borderStyle: 1px solid #ddd;
+
+@import 'styles/select_box';
 
 body {
   margin-top: 70px;
@@ -20,6 +23,15 @@ body {
 
   #datamap-container {
     position: relative;
+    margin: 0 auto;
+  }
+}
+
+.data-table-box {
+  padding: 0 15px;
+
+  .data-table-box-outer {
+    max-width: 650px;
     margin: 0 auto;
   }
 }
@@ -48,6 +60,7 @@ table {
     border: $borderStyle;
     width: 45%;
     height: 35px;
+    text-align: start;
 
     &:first-of-type {
       padding: 10px 15px;
@@ -67,53 +80,15 @@ table {
   }
 
   .remove-btn {
+    margin-left: 10px;
     padding: 10px;
     color: $red;
     opacity: 0;
     cursor: pointer;
+    font-size: 1.7rem;
   }
 
   tr:hover .remove-btn {
     opacity: 1;
-  }
-}
-
-.select-container {
-  margin: 20px 0;
-
-  table {
-    margin: 0;
-
-    td {
-      padding: 0;
-      border-left: none;
-
-      &:first-of-type {
-        border-right: none;
-      }
-    }
-  }
-
-  .Select-control {
-    border-radius: 0;
-    border-collapse: separate;
-    border: 0;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-  }
-
-  .add-button {
-    padding: 5px;
-    color: $green;
-    border: none;
-    background: none;
-
-    &:disabled {
-      color: lighten($green, 25%);
-    }
-
-    .glyphicon {
-      font-size: 16px;
-    }
   }
 }
