@@ -25,10 +25,11 @@ export default class SelectBox extends React.Component {
     });
   }
   handleButtonClick(){
+    const inputValue = this.state.inputValue || 0;
     this.props.onAddRow(
       this.state.selectedOption.regionName,
       this.state.selectedOption.code,
-      this.state.inputValue
+      inputValue
     );
     this.setState({
       selected: false,
