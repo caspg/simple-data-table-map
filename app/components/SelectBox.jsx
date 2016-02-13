@@ -52,6 +52,7 @@ export default class SelectBox extends React.Component {
               labelKey="regionName"
               valueKey="code"
               onChange={this.handleOnChange}
+              noResultsText="All States are below"
             />
           </div>
           <div className="column numeric-input-column">
