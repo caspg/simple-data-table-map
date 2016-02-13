@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: './app/main.js',
   output: { path: './', filename: 'bundle.js' },
@@ -19,5 +21,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {NODE_ENV: '"production"'}
+    })
+  ]
 };
