@@ -14,7 +14,19 @@ body {
   border-radius: 0;
   height: 60px;
   background: rgba(239, 239, 255, 0.9);
-  color: white !important;
+  padding: 0 30px;
+}
+
+.navbar-header {
+  display: inline-block;
+}
+
+.github-repo-link {
+  line-height: 50px;
+
+  .glyphicon {
+    margin-right: 5px;
+  }
 }
 
 

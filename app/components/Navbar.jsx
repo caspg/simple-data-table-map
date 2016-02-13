@@ -36,6 +36,11 @@ export default class Navbar extends React.Component {
           <div className="navbar-header">
             <a className="navbar-brand" href="#">Simple DataMap</a>
           </div>
+
+            <a href="https://github.com/caspg/simple-data-table-map" className="github-repo-link navbar-link">
+              <span className="glyphicon glyphicon-star"></span>
+              github
+            </a>
         </div>
       </nav>
     );
