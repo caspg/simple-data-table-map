@@ -60,7 +60,6 @@ export default class DataMap extends React.Component {
       const currentScreenWidth = this.currentScreenWidth();
       const mapContainerWidth = mapContainer.style('width');
       if (this.currentScreenWidth() > 600 && mapContainerWidth !== '600px') {
-        console.log('first cond')
         d3.select('svg').remove();
         mapContainer.style({
           width: '600px',
@@ -69,7 +68,6 @@ export default class DataMap extends React.Component {
         this.datamap = this.renderMap();
       }
       else if (this.currentScreenWidth() <= 600) {
-        console.log('second cond')
         d3.select('svg').remove();
         mapContainer.style({
           width: currentScreenWidth + 'px',
